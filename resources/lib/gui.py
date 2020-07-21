@@ -614,7 +614,7 @@ class GUI ( xbmcgui.WindowXMLDialog ) :
 				self.getControl(SONG_INFO_TIME).setLabel('')
 
 	def _update_volume(self,state):
-		if state['volume']=='-1':
+		if 'volume' not in state or state['volume']=='-1':
 			self.getControl(VOLUME_GROUP).setVisible(False)
 			self._can_volume=False
 		else:
